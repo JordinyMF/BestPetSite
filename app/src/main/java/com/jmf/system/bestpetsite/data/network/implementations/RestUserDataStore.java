@@ -5,10 +5,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import com.jmf.system.bestpetsite.BPSApplication;
+import com.jmf.system.bestpetsite.data.entities.BaseResponseEntity;
 import com.jmf.system.bestpetsite.data.entities.UserEntity;
 import com.jmf.system.bestpetsite.data.exception.NetworkConnectionException;
 import com.jmf.system.bestpetsite.data.network.interfaces.UserDataStore;
 import com.jmf.system.bestpetsite.data.network.retrofit.ApiClient;
+
+import java.util.List;
 
 import retrofit2.Response;
 
@@ -24,9 +27,77 @@ public class RestUserDataStore implements UserDataStore {
         if (!isThereInternetConnection()) {
             throw new NetworkConnectionException(errorConnection);
         }
-        Response<UserEntity> response = ApiClient.getApiToken().loginUserEntity(userEntity).execute();
+        Response<UserEntity> response = ApiClient.getApiToken().loginUserEntity("password",userEntity.getUserName(),userEntity.getPassword()).execute();
         if (response.isSuccessful()) {
             return response.body();
+        } else {
+            throw new NetworkConnectionException();
+        }
+    }
+
+    @Override
+    public List<UserEntity> getUserEntityList() throws Exception {
+        if (!isThereInternetConnection()) {
+            throw new NetworkConnectionException(errorConnection);
+        }
+        Response<BaseResponseEntity<List<UserEntity>>> response = ApiClient.getApi().getUserList().execute();
+        if (response.isSuccessful()) {
+            if (response.body().isOk()) {
+                return response.body().getContent();
+            } else {
+                throw new NetworkConnectionException(response.body().getResponse().getMessage());
+            }
+        } else {
+            throw new NetworkConnectionException();
+        }
+    }
+
+    @Override
+    public UserEntity insertUserEntity(UserEntity userEntity) throws Exception {
+        if (!isThereInternetConnection()) {
+            throw new NetworkConnectionException(errorConnection);
+        }
+        Response<BaseResponseEntity<UserEntity>> response = ApiClient.getApiToken().insertUser(userEntity).execute();
+        if (response.isSuccessful()) {
+            if (response.body().isOk()) {
+                return response.body().getContent();
+            } else {
+                throw new NetworkConnectionException(response.body().getResponse().getMessage());
+            }
+        } else {
+            throw new NetworkConnectionException();
+        }
+    }
+
+    @Override
+    public UserEntity updateUserEntity(UserEntity userEntity) throws Exception {
+        if (!isThereInternetConnection()) {
+            throw new NetworkConnectionException(errorConnection);
+        }
+        Response<BaseResponseEntity<UserEntity>> response = ApiClient.getApi().updateUser(userEntity).execute();
+        if (response.isSuccessful()) {
+            if (response.body().isOk()) {
+                return response.body().getContent();
+            } else {
+                throw new NetworkConnectionException(response.body().getResponse().getMessage());
+            }
+        } else {
+            throw new NetworkConnectionException();
+        }
+    }
+
+    @Override
+    public UserEntity deleteUserEntity(UserEntity userEntity) throws Exception {
+        if (!isThereInternetConnection()) {
+            throw new NetworkConnectionException(errorConnection);
+        }
+        Response<BaseResponseEntity<UserEntity>> response = ApiClient.getApi().deleteUser(userEntity.getId()).execute();
+        if (response.isSuccessful()) {
+            if (response.body().isOk()) {
+                return response.body().getContent();
+            } else {
+                throw new NetworkConnectionException(response.body().getResponse().getMessage());
+            }
         } else {
             throw new NetworkConnectionException();
         }

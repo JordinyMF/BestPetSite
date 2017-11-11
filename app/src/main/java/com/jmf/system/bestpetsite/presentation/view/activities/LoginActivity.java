@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.jmf.system.bestpetsite.R;
 import com.jmf.system.bestpetsite.presentation.view.fragments.LoginUserFragment;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,13 +27,25 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
     }
 
-    public void onClickBreak(View view) {
-        LoginUserFragment addTaskFragment = (LoginUserFragment) getSupportFragmentManager()
+
+    public void ToAccess(View view) {
+        LoginUserFragment loginUserFragment = (LoginUserFragment) getSupportFragmentManager()
                 .findFragmentByTag(TAG_LOGIN_FRAGMENT);
-        if (addTaskFragment != null) {
-            addTaskFragment.onLoginActionClick();
+        if (loginUserFragment != null) {
+            loginUserFragment.onLoginActionClick();
+        }
+    }
+
+
+    public void AccountCreate(View view) {
+
+        LoginUserFragment loginUserFragment = (LoginUserFragment) getSupportFragmentManager()
+                .findFragmentByTag(TAG_LOGIN_FRAGMENT);
+        if (loginUserFragment != null) {
+            loginUserFragment.onAccountCreateActionClick();
         }
     }
 }

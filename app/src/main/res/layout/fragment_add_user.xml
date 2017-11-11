@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:app="http://schemas.android.com/apk/res-auto"
+         xmlns:tools="http://schemas.android.com/tools"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+    android:paddingBottom="50dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="16dp"
+    android:background="@drawable/frm" >
+
+    <LinearLayout
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CREACIÓN CUENTA"
+                android:textSize="25dp"
+                android:typeface="sans"
+                android:id="@+id/dd"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+
+                android:textColor="@color/colorAccent"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOGO --- Best Pet Site"
+                android:textSize="18dp"
+                android:typeface="sans"
+                android:layout_below="@+id/dd"
+                android:layout_centerHorizontal="true"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="75dp"
+
+                >
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="vertical"
+                    android:paddingTop="15dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:elevation="20dp"
+                    >
+
+
+
+                    <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/TextInputLayout"
+                        android:layout_marginTop="0dp"
+                    >
+                    <EditText
+                        android:id="@+id/edt_firstName"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="ingrese nombre"
+
+                        android:textAllCaps="false"
+                        />
+                </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_marginTop="10dp"
+                        >
+                        <EditText
+                            android:id="@+id/edt_lastName"
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="ingrese apellidos"
+
+                            android:textAllCaps="false"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_marginTop="10dp"
+                        >
+                        <EditText
+                            android:id="@+id/edt_email"
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="ingrese correo"
+                            android:drawableLeft="@drawable/user"
+                            android:drawableStart="@drawable/user"
+                            android:inputType="textEmailAddress"
+                            android:textAllCaps="false"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_marginTop="10dp"
+
+                        >
+                        <EditText
+                            android:id="@+id/edt_password"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:singleLine="true"
+
+                            android:drawableLeft="@drawable/password"
+                            android:drawableStart="@drawable/password"
+                            android:drawableTint="#FF4081"
+                            android:hint="Password"
+                            android:inputType="textPassword"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_marginTop="10dp"
+
+                        >
+                        <EditText
+                            android:id="@+id/edt_passwordConfirm"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:singleLine="true"
+
+                            android:drawableLeft="@drawable/password"
+                            android:drawableStart="@drawable/password"
+                            android:drawableTint="#FF4081"
+                            android:hint="Password"
+                            android:inputType="textPassword"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btn_UserCreate"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="40dp"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:text="Crear Cuenta"
+                        android:textColor="@color/colorWhite"
+                        android:background="@color/colorCircle"
+                        android:layout_gravity="center"
+                        android:onClick="btn_AccountCreate"
+                        />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout> </LinearLayout>
+     
+</FrameLayout>

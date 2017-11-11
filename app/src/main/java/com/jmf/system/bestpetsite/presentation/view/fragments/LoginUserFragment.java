@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.jmf.system.bestpetsite.MainActivity;
+import com.jmf.system.bestpetsite.presentation.view.activities.AccountCreateActivity;
 import com.jmf.system.bestpetsite.R;
 import com.jmf.system.bestpetsite.data.network.retrofit.Token;
 import com.jmf.system.bestpetsite.presentation.models.UserModel;
@@ -50,7 +51,7 @@ public class LoginUserFragment extends Fragment implements LoginUserView {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
       //  return super.onCreateView(inflater, container, savedInstanceState);
-        return inflater.inflate(R.layout.activity_main,container,false);
+        return inflater.inflate(R.layout.activity_login,container,false);
     }
 
     @Override
@@ -97,7 +98,8 @@ public class LoginUserFragment extends Fragment implements LoginUserView {
         getActivity().setResult(Activity.RESULT_OK);
         getActivity().finish();
         if(!Token.TOKEN_SERVICE_REST.isEmpty()){
-            startActivity(new Intent(getActivity().getApplicationContext(), MainActivity.class));
+            Log.i("**** Token de Acceso: ",Token.TOKEN_SERVICE_REST);
+            startActivity(new Intent(getActivity().getApplicationContext(), AccountCreateActivity.class));
         }
     }
 
@@ -109,5 +111,9 @@ public class LoginUserFragment extends Fragment implements LoginUserView {
         loginUser(userModel);
     }
 
-
+    public void onAccountCreateActionClick(){
+        getActivity().setResult(Activity.RESULT_OK);
+        getActivity().finish();
+        startActivity(new Intent(getActivity().getApplicationContext(), AccountCreateActivity.class));
+    }
 }
