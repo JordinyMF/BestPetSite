@@ -41,6 +41,7 @@ public class UserEntityDataMapper {
         userEntity.setStatus(user.getStatus());
         userEntity.setUserName(user.getEmail());
         userEntity.setAccessToken(user.getUserToken());
+
         return userEntity;
     }
 }
