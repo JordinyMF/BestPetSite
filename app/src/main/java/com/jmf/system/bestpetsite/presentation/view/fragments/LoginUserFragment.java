@@ -20,6 +20,7 @@ import com.jmf.system.bestpetsite.data.network.retrofit.Token;
 import com.jmf.system.bestpetsite.presentation.models.UserModel;
 import com.jmf.system.bestpetsite.presentation.presenter.user.LoginUserPresenter;
 import com.jmf.system.bestpetsite.presentation.view.LoginUserView;
+import com.jmf.system.bestpetsite.presentation.view.activities.CustomerActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -99,7 +100,7 @@ public class LoginUserFragment extends Fragment implements LoginUserView {
         getActivity().finish();
         if(!Token.TOKEN_SERVICE_REST.isEmpty()){
             Log.i("**** Token de Acceso: ",Token.TOKEN_SERVICE_REST);
-            startActivity(new Intent(getActivity().getApplicationContext(), AccountCreateActivity.class));
+            startActivity(new Intent(getActivity().getApplicationContext(), CustomerActivity.class));
         }
     }
 

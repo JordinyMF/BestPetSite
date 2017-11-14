@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/BestPetSite.iml" filepath="$PROJECT_DIR$/.idea/BestPetSite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BestPetSite.iml" filepath="$PROJECT_DIR$/BestPetSite.iml" />
+      <module fileurl="file://E:\JORDINY\Apps\BestPetSite\.idea\BestPetSite.iml" filepath="E:\JORDINY\Apps\BestPetSite\.idea\BestPetSite.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

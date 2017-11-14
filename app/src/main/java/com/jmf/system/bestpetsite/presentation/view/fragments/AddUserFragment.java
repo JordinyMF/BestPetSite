@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -31,17 +32,17 @@ import butterknife.Unbinder;
 
 public class AddUserFragment extends Fragment implements AddUserView {
 
-    @BindView(R.id.edt_firstName)
-    TextInputEditText edtFirstName;
+    @BindView(R.id.edtFirstName)
+    EditText edtFirstName;
 
-    @BindView(R.id.edt_lastName)
-    Switch edtLastName;
+    @BindView(R.id.edtLastName)
+    EditText edtLastName;
 
-    @BindView(R.id.edt_email)
-    TextInputEditText edtEmail;
+    @BindView(R.id.edtEmail)
+    EditText edtEmail;
 
-    @BindView(R.id.edt_password)
-    TextInputEditText edtPassword;
+    @BindView(R.id.edtPassword)
+    EditText edtPassword;
 
     @BindView(R.id.progressAccount)
     ProgressBar progressBar;

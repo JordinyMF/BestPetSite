@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-         xmlns:app="http://schemas.android.com/apk/res-auto"
-         xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-    android:paddingBottom="50dp"
+    android:paddingBottom="20dp"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
-    android:paddingTop="16dp"
-    android:background="@drawable/frm" >
+    android:paddingTop="0dp"
+    android:background="@drawable/frm"
+    tools:context="com.jmf.system.bestpetsite.presentation.view.activities.AccountCreateActivity">
+    >
     <ProgressBar
         android:id="@+id/progressAccount"
         android:layout_width="wrap_content"
@@ -45,21 +47,10 @@
 
                 android:textColor="@color/colorAccent"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LOGO --- Best Pet Site"
-                android:textSize="18dp"
-                android:typeface="sans"
-                android:layout_below="@+id/dd"
-                android:layout_centerHorizontal="true"
-                android:textStyle="italic"
-                android:textColor="@color/colorPrimary"
-                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="50dp"
 
                 >
                 <LinearLayout
@@ -85,7 +76,7 @@
                         android:layout_marginTop="0dp"
                     >
                     <EditText
-                        android:id="@+id/edt_firstName"
+                        android:id="@+id/edtFirstName"
                         android:layout_marginTop="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -101,7 +92,7 @@
                         android:layout_marginTop="10dp"
                         >
                         <EditText
-                            android:id="@+id/edt_lastName"
+                            android:id="@+id/edtLastName"
                             android:layout_marginTop="15dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -117,7 +108,7 @@
                         android:layout_marginTop="10dp"
                         >
                         <EditText
-                            android:id="@+id/edt_email"
+                            android:id="@+id/edtEmail"
                             android:layout_marginTop="15dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -136,7 +127,7 @@
 
                         >
                         <EditText
-                            android:id="@+id/edt_password"
+                            android:id="@+id/edtPassword"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -157,7 +148,7 @@
 
                         >
                         <EditText
-                            android:id="@+id/edt_passwordConfirm"
+                            android:id="@+id/edtPasswordConfirm"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -190,4 +181,4 @@
 
         </RelativeLayout> </LinearLayout>
      
-</FrameLayout>
+</RelativeLayout>
