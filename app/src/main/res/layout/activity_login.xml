@@ -99,6 +99,7 @@
                                 android:drawableLeft="@drawable/user"
                                 android:drawableStart="@drawable/user"
                                 android:textAllCaps="false"
+                                android:lines="1"
                                 />
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
@@ -114,7 +115,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
                                 android:singleLine="true"
-
+                                android:lines="1"
                                 android:drawableLeft="@drawable/password"
                                 android:drawableStart="@drawable/password"
                                 android:drawableTint="#FF4081"

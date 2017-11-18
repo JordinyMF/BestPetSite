@@ -21,6 +21,7 @@ import com.jmf.system.bestpetsite.presentation.models.UserModel;
 import com.jmf.system.bestpetsite.presentation.presenter.user.LoginUserPresenter;
 import com.jmf.system.bestpetsite.presentation.view.LoginUserView;
 import com.jmf.system.bestpetsite.presentation.view.activities.CustomerActivity;
+import com.jmf.system.bestpetsite.presentation.view.activities.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -100,7 +101,9 @@ public class LoginUserFragment extends Fragment implements LoginUserView {
         getActivity().finish();
         if(!Token.TOKEN_SERVICE_REST.isEmpty()){
             Log.i("**** Token de Acceso: ",Token.TOKEN_SERVICE_REST);
-            startActivity(new Intent(getActivity().getApplicationContext(), CustomerActivity.class));
+            startActivity(new Intent(getActivity().getApplicationContext(), MainActivity.class));
+        }else {
+            Toast.makeText(getActivity().getApplicationContext(),"Usuario y/o Password Incorrecto",Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -5,4 +5,7 @@ package com.jmf.system.bestpetsite.data.repository.datasource.pet;
  */
 
 public class PetDataSourceFactory {
+    public PetDataSource createNetworkPetDataSource(){
+        return new NetworkPetDataSource();
+    }
 }

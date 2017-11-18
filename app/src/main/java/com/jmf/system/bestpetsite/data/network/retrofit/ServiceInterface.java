@@ -2,6 +2,7 @@ package com.jmf.system.bestpetsite.data.network.retrofit;
 
 import com.jmf.system.bestpetsite.data.entities.BaseResponseEntity;
 import com.jmf.system.bestpetsite.data.entities.CustomerEntity;
+import com.jmf.system.bestpetsite.data.entities.PetEntity;
 import com.jmf.system.bestpetsite.data.entities.UserEntity;
 
 import java.util.List;
@@ -43,6 +44,24 @@ public interface ServiceInterface {
     @DELETE("users/{id}")
     Call<BaseResponseEntity<UserEntity>> deleteUser(@Path("id") int id);
     /*********************************** USER ************************************* FIN*/
+
+    /*********************************** PET ************************************* INI*/
+    @GET("pets")
+    Call<BaseResponseEntity<List<PetEntity>>> getPetList();
+
+    @GET("pets/{id}")
+    Call<BaseResponseEntity<PetEntity>> getPet(@Path("id") int id);
+
+    @POST("pets")
+    Call<BaseResponseEntity<PetEntity>> insertPet(@Body PetEntity petEntity);
+
+    @PUT("pets")
+    Call<BaseResponseEntity<PetEntity>>  updatePet(@Body PetEntity petEntity);
+
+    @DELETE("pets/{id}")
+    Call<BaseResponseEntity<PetEntity>> deletePet(@Path("id") int id);
+
+    /*********************************** PET ************************************* FIN*/
 
 
     /*********************************** CUSTOMER ************************************* INI*/

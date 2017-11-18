@@ -1,6 +1,8 @@
 package com.jmf.system.bestpetsite.data.network.interfaces;
 
 import com.jmf.system.bestpetsite.data.entities.CustomerEntity;
+import com.jmf.system.bestpetsite.data.entities.PetEntity;
+import com.jmf.system.bestpetsite.data.entities.UserEntity;
 
 import java.util.List;
 
@@ -9,7 +11,14 @@ import java.util.List;
  */
 
 public interface PetDataStore {
-    List<CustomerEntity> customerEntityList() throws Exception;
 
-    CustomerEntity insertCustomerEntity(CustomerEntity newsEntity) throws Exception;
+    List<PetEntity> getPetEntityList() throws Exception;
+
+    PetEntity getPetEntity(PetEntity petEntity) throws Exception;
+
+    PetEntity insertPetEntity(PetEntity petEntity) throws Exception;
+
+    PetEntity updatePetEntity(PetEntity petEntity) throws Exception;
+
+    PetEntity deletePetEntity(PetEntity petEntity) throws Exception;
 }

@@ -1,5 +1,6 @@
 package com.jmf.system.bestpetsite.presentation.view.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,7 @@ import com.jmf.system.bestpetsite.R;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    static int request_code;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,17 +85,20 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_profilePet) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            startActivityForResult(new Intent(this,ContentActivity.class), request_code);
+        } else if (id == R.id.nav_addPet) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_vaccineControl) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_notifications) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_contacts) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_veterinaryCenters) {
+
+        } else if (id == R.id.nav_signOff) {
 
         }
 

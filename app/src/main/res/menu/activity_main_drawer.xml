@@ -5,19 +5,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_profilePet"
             android:icon="@drawable/ic_menu_camera"
             android:title="Perfil Mascota" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_addPet"
             android:icon="@drawable/ic_add_circle_black_24dp"
             android:title="Agregar Mascota" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_vaccineControl"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Control de Vacunas" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_notifications"
             android:icon="@drawable/ic_notifications_active_black_24dp"
             android:title="Notificaciones" />
     </group>
@@ -25,15 +25,15 @@
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_contacts"
                 android:icon="@drawable/ic_pets_black_24dp"
                 android:title="Contáctanos" />
             <item
-                android:id="@+id/ic_place_black_24dp"
+                android:id="@+id/nav_veterinaryCenters"
                 android:icon="@drawable/ic_place_black_24dp"
                 android:title="Centros Veterinarios" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_signOff"
                 android:icon="@drawable/ic_assignment_return_black_24dp"
                 android:title="Cerrar Sesión" />
         </menu>
