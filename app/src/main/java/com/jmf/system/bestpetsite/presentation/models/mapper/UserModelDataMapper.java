@@ -21,6 +21,7 @@ public class UserModelDataMapper {
         userModel.setPassword(user.getPassword());
         userModel.setStatus(user.getStatus());
         userModel.setUserToken(user.getUserToken());
+        userModel.setMessage(user.getMessage());
         return userModel;
     }
 
@@ -40,6 +41,7 @@ public class UserModelDataMapper {
         user.setPassword(userModel.getPassword());
         user.setStatus(user.getStatus());
         user.setUserToken(userModel.getUserToken());
+        user.setMessage(userModel.getMessage());
         return user;
     }
 }

@@ -12,6 +12,15 @@ public class User {
     private String password;
     private boolean status;
     private String userToken;
+    private String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     public int getId() {
         return id;

@@ -2,8 +2,11 @@ package com.jmf.system.bestpetsite.presentation.view.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,11 +18,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.jmf.system.bestpetsite.R;
+import com.jmf.system.bestpetsite.domain.models.CodesCatalog;
+import com.jmf.system.bestpetsite.presentation.view.fragments.CodesCatalogListFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     static int request_code;
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            return navigateAccordingTo(item.getItemId());
+        }
+
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,14 +43,15 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabControls);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+             /*   Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                startActivityForResult(new Intent(getApplicationContext(),CodesCatalogActivity.class), request_code);
             }
-        });*/
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -44,6 +61,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigateAccordingTo(R.id.navigation_home);
     }
 
 
@@ -87,9 +109,9 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_profilePet) {
             // Handle the camera action
-            startActivityForResult(new Intent(this,ContentActivity.class), request_code);
-        } else if (id == R.id.nav_addPet) {
 
+        } else if (id == R.id.nav_addPet) {
+            startActivityForResult(new Intent(this,ContentActivity.class), request_code);
         } else if (id == R.id.nav_vaccineControl) {
 
         } else if (id == R.id.nav_notifications) {
@@ -105,5 +127,28 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    private Fragment getFragmentFor(int id) {
+        /*  switch (id) {
+          case R.id.navigation_home:
+                return new HomeFragment();
+            case R.id.navigation_sources:
+                return new SourcesFragment();
+            case R.id.navigation_settings:
+                return new SettingsFragment();
+        }*/
+        return null;
+    }
+    private boolean navigateAccordingTo(int id) {
+        try {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content, getFragmentFor(id))
+                    .commit();
+            return true;
+        } catch(NullPointerException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

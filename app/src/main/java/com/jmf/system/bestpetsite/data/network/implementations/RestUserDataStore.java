@@ -30,7 +30,14 @@ public class RestUserDataStore implements UserDataStore {
         Response<UserEntity> response = ApiClient.getApiToken().loginUserEntity("password",userEntity.getUserName(),userEntity.getPassword()).execute();
         if (response.isSuccessful()) {
             return response.body();
-        } else {
+        } else if (response.code()==400) {
+            if(response.body().getError()==-1){
+                throw new NetworkConnectionException(response.body().getMessage());
+            }else {
+                throw new NetworkConnectionException();
+            }
+
+        }else{
             throw new NetworkConnectionException();
         }
     }

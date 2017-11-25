@@ -2,6 +2,7 @@ package com.jmf.system.bestpetsite.presentation.view.fragments;
 
 import android.app.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,8 +43,7 @@ public class LoginUserFragment extends Fragment implements LoginUserView {
     EditText edtLoginPassword;
 
 
-    @BindView(R.id.progressa)
-    ProgressBar progressBar;
+    ProgressDialog progressDialog;
 
     private Unbinder unbinder;
 
@@ -72,12 +72,18 @@ public class LoginUserFragment extends Fragment implements LoginUserView {
 
     @Override
     public void showLoading() {
-        this.progressBar.setVisibility(View.VISIBLE);
+        progressDialog = new ProgressDialog(getContext());
+        progressDialog.setTitle("Procesando...");
+        progressDialog.setMessage("Espere por favor.");
+        progressDialog.setCancelable(false);
+        progressDialog.setIndeterminate(true);
+        progressDialog.show();
     }
 
     @Override
     public void hideLoading() {
-        this.progressBar.setVisibility(View.GONE);
+
+        progressDialog.dismiss();
     }
 
     @Override

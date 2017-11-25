@@ -11,12 +11,7 @@
     android:background="@drawable/frm"
     tools:context="com.jmf.system.bestpetsite.presentation.view.activities.AccountCreateActivity">
     >
-    <ProgressBar
-        android:id="@+id/progressAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_gravity="center" />
+
     <LinearLayout
         android:paddingEnd="16dp"
         android:paddingStart="16dp"
@@ -76,11 +71,11 @@
                         android:layout_marginTop="0dp"
                     >
                     <EditText
-                        android:id="@+id/edtFirstName"
+                        android:id="@+id/edtPetName"
                         android:layout_marginTop="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="ingrese nombre"
+                        android:hint="ingrese Nombre"
                         android:lines="1"
                         android:textAllCaps="false"
                         />
@@ -92,11 +87,11 @@
                         android:layout_marginTop="10dp"
                         >
                         <EditText
-                            android:id="@+id/edtLastName"
+                            android:id="@+id/edtPetAge"
                             android:layout_marginTop="15dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="ingrese apellidos"
+                            android:hint="ingrese Edad"
                             android:lines="1"
                             android:textAllCaps="false"
                             />
@@ -108,16 +103,13 @@
                         android:layout_marginTop="10dp"
                         >
                         <EditText
-                            android:id="@+id/edtEmail"
+                            android:id="@+id/edtPetRace"
                             android:layout_marginTop="15dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="ingrese correo"
-                            android:drawableLeft="@drawable/user"
-                            android:drawableStart="@drawable/user"
-                            android:inputType="textEmailAddress"
+                            android:hint="ingrese Raza"
+                            android:lines="1"
                             android:textAllCaps="false"
-                            android:lines="1"
                             />
                     </android.support.design.widget.TextInputLayout>
                     <android.support.design.widget.TextInputLayout
@@ -128,52 +120,40 @@
 
                         >
                         <EditText
-                            android:id="@+id/edtPassword"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/edtPetColor"
+                            android:layout_marginTop="15dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:singleLine="true"
+                            android:hint="ingrese Color"
                             android:lines="1"
-                            android:drawableLeft="@drawable/password"
-                            android:drawableStart="@drawable/password"
-                            android:drawableTint="#FF4081"
-                            android:hint="Password"
-                            android:inputType="textPassword"
+                            android:textAllCaps="false"
                             />
                     </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:theme="@style/TextInputLayout"
-                        android:layout_marginTop="10dp"
 
-                        >
-                        <EditText
-                            android:id="@+id/edtPasswordConfirm"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:singleLine="true"
-                            android:lines="1"
-                            android:drawableLeft="@drawable/password"
-                            android:drawableStart="@drawable/password"
-                            android:drawableTint="#FF4081"
-                            android:hint="Confirmar Password"
-                            android:inputType="textPassword"
-                            />
-                    </android.support.design.widget.TextInputLayout>
+                    <ImageView
+                        android:id="@+id/FotoCC"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_below="@+id/EtiquetaFoto"
+                        android:layout_toRightOf="@+id/EtiquetaFoto"
+                        android:layout_alignLeft="@+id/txtDescripcionCC"
+                        android:layout_alignStart="@+id/txtDescripcionCC"
+                        android:onClick="btn_PetPhoto"
+                        />
 
                     <Button
-                        android:id="@+id/btn_UserCreate"
+                        android:id="@+id/btn_PetCreate"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="40dp"
                         android:layout_width="200dp"
                         android:layout_height="40dp"
-                        android:text="Crear Cuenta"
+                        android:text="Crear Mascota"
                         android:textColor="@color/colorWhite"
                         android:background="@color/colorCircle"
                         android:layout_gravity="center"
-                        android:onClick="btn_AccountCreate"
+                        android:onClick="btn_PetCreate"
                         />
 
 

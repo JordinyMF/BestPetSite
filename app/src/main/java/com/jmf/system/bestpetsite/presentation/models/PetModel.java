@@ -10,6 +10,9 @@ public class PetModel {
     private  int age;
     private  String race;
     private String color;
+    private String photo;
+
+
 
     public int getId() {
         return id;
@@ -49,5 +52,13 @@ public class PetModel {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

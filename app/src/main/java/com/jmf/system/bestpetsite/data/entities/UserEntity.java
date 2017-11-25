@@ -29,6 +29,26 @@ public class UserEntity {
     private String grantType;
     @SerializedName("username")
     private String userName;
+    @SerializedName("error")
+    private int error;
+    @SerializedName("error_description")
+    private String message;
+
+    public int getError() {
+        return error;
+    }
+
+    public void setError(int error) {
+        this.error = error;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     public UserEntity() {
         this.grantType="password";

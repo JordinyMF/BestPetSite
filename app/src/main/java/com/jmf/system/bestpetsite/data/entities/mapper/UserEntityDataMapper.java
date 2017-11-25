@@ -21,6 +21,7 @@ public class UserEntityDataMapper {
         user.setPassword(userEntity.getPassword());
         user.setStatus(userEntity.getStatus());
         user.setUserToken(userEntity.getAccessToken());
+        user.setMessage(userEntity.getMessage());
         return user;
     }
 
@@ -31,7 +32,7 @@ public class UserEntityDataMapper {
         }
         return userList;
     }
-    public UserEntity transform(User user){
+    public UserEntity transform(User user) {
         UserEntity userEntity = new UserEntity();
         userEntity.setId(user.getId());
         userEntity.setEmail(user.getEmail());
@@ -41,7 +42,7 @@ public class UserEntityDataMapper {
         userEntity.setStatus(user.getStatus());
         userEntity.setUserName(user.getEmail());
         userEntity.setAccessToken(user.getUserToken());
-
+        userEntity.setMessage(user.getMessage());
         return userEntity;
     }
 }

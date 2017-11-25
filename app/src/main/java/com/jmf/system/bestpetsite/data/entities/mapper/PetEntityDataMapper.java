@@ -19,6 +19,7 @@ public class PetEntityDataMapper {
         pet.setAge(petEntity.getAge());
         pet.setRace(petEntity.getRace());
         pet.setColor(petEntity.getColor());
+        pet.setPhoto(petEntity.getPhoto());
         return  pet;
     }
 
@@ -30,6 +31,7 @@ public class PetEntityDataMapper {
         petEntity.setRace(pet.getRace());
         petEntity.setColor(pet.getColor());
         petEntity.setStatus(true);
+        petEntity.setPhoto(pet.getPhoto());
         return  petEntity;
     }
 

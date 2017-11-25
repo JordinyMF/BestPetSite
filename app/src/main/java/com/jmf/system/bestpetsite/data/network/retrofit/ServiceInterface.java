@@ -1,7 +1,9 @@
 package com.jmf.system.bestpetsite.data.network.retrofit;
 
 import com.jmf.system.bestpetsite.data.entities.BaseResponseEntity;
+import com.jmf.system.bestpetsite.data.entities.CodesCatalogEntity;
 import com.jmf.system.bestpetsite.data.entities.CustomerEntity;
+import com.jmf.system.bestpetsite.data.entities.PetControlTypeEntity;
 import com.jmf.system.bestpetsite.data.entities.PetEntity;
 import com.jmf.system.bestpetsite.data.entities.UserEntity;
 
@@ -24,6 +26,11 @@ import retrofit2.http.Path;
 
 public interface ServiceInterface {
     String BASE_URL = "http://www.bestpetsite.somee.com/bestpetsite/api/v1/";
+
+    /*********************************** CONFIGURATIONS ************************************* INI*/
+    @GET("codescatalogs/{id}")
+    Call<BaseResponseEntity<List<CodesCatalogEntity>>> getCodesListById(@Path("id") int id);
+    /*********************************** CONFIGURATIONS ************************************* FIN*/
 
     /*********************************** USER ************************************* INI*/
     @FormUrlEncoded
@@ -72,4 +79,9 @@ public interface ServiceInterface {
     @POST("customers")
     Call<BaseResponseEntity<CustomerEntity>> postCustomer(@Body CustomerEntity body);
     /*********************************** CUSTOMER ************************************* FIN*/
+
+    /*********************************** PET CONTROL TYPE ************************************* INI*/
+    @POST("petcontroltypes")
+    Call<BaseResponseEntity<PetControlTypeEntity>> insertPetControlType(@Body PetControlTypeEntity petControlTypeEntity);
+    /*********************************** PET CONTROL TYPE ************************************* FIN*/
 }

@@ -11,6 +11,8 @@ public class Pet {
     private  int age;
     private  String race;
     private String color;
+    private String photo;
+
 
     public int getId() {
         return id;
@@ -51,4 +53,13 @@ public class Pet {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
 }

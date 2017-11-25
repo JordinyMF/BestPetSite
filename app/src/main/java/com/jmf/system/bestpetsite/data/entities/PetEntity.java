@@ -19,6 +19,10 @@ public class PetEntity {
     private String color;
     @SerializedName("status")
     private Boolean status;
+    @SerializedName("photo")
+    private String photo;
+
+
 
     public int getId() {
         return id;
@@ -66,5 +70,13 @@ public class PetEntity {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }
